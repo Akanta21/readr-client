@@ -21,6 +21,10 @@ This repo contains client-side code for Readr, which is an app that aggregates, 
 
 jQuery, bootstrap, fontawesome
 
+#Companion API client
+
+[Readr | Aggregate, currate, serve](https://flight846.github.io/readr-client/)
+
 ##Team
 
 Yazid Ismail (@flight846)
