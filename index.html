@@ -17,7 +17,15 @@
     <link rel="stylesheet" type="text/css" href="./css/demo.css" />
     <link rel="stylesheet" type="text/css" href="./css/component.css" />
     <link rel="stylesheet" href="./css/style.css">
-
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./fonts/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./fonts/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./fonts/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./fonts/favicon/manifest.json">
+    <link rel="mask-icon" href="./fonts/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./fonts/favicon/favicon.ico">
+    <meta name="msapplication-config" content="./fonts/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body class="demo-1">
     <!--navbar-->
@@ -90,44 +98,45 @@
           </div><!-- /.modal -->
       <!-- Start of signin modal -->
       <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Sign in</h4>
-          </div>
-          <div class="modal-body">
-              <form class="form-horizontal" method="post" action="#" id="signin-form">
-                  <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                      <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail2" placeholder="Email">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                      <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                          <label>
-                          <input type="checkbox"> Remember me
-                          </label>
-                      </div>
-                      <div class="form-group">
-                          <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" name="commit" class="btn btn-primary btn-block">Sign in</button>
-                          </div>
-                      </div>
-                  </div>
-              </form>
-          </div>
-          </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Sign in</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" method="post" action="#" id="signin-form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                            <input type="email" name="email" class="form-control" id="inputEmail2" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                            <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <div class="checkbox">
+                                  <label>
+                                  <input type="checkbox"> Remember me
+                                  </label>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" name="commit" class="btn btn-primary btn-block">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+      </div>
       <div class="container">
           <h1>Show articles</h1>
       </div>

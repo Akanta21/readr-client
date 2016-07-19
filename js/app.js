@@ -1,7 +1,8 @@
 console.clear()
 console.log('App.js is loaded')
 /* global $ */
-var serverURL = 'http://readr-app.herokuapp.com/'
+var serverURL = 'https://readr-app.herokuapp.com/'
+var currentUser = null || window.localStorage.email
 
 function signup (formData) {
   console.log(formData)
@@ -11,7 +12,7 @@ function signup (formData) {
     data: formData,
     success: function (response) {
       // then redirect
-      window.location.href = '/users/index.html'
+      window.location.href = './users/index.html'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
@@ -28,11 +29,12 @@ function signin (formData) {
     url: serverURL + 'signin',
     data: formData,
     success: function (response) {
+      window.alert(response)
       // success save the repsonse
-      window.localStorage.email = $('inputEmail2').val()
+      window.localStorage.email = $('#inputEmail2').val()
       window.localStorage.auth_token = response.auth_token
       // then redirect
-      window.location.href = '/users/index.html'
+      window.location.href = './users/index.html'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
@@ -46,9 +48,7 @@ function signin (formData) {
 $(function () {
   // if (!window.localStorage['email'] || !window.localStorage['auth_token']) loadUser()
   // globals $ currentUser //
-  function pageReady () {
-    console.log('Hello ' + currentUser.name)
-  }
+  console.log('Hello ' + currentUser)
 
   // logout users
   $('#logout').click(function (event) {
@@ -56,7 +56,7 @@ $(function () {
 
     window.localStorage.removeItem('email')
     window.localStorage.removeItem('auth_token')
-    window.location.href = './users/index.html'
+    window.location.href = '../index.html'
   })
 
   // listen for the form login
@@ -74,4 +74,6 @@ $(function () {
     var formData = $(this).serialize()
     signin(formData)
   })
+
+  $('#hello-user a').html('Hello, ' + currentUser)
 })
