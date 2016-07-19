@@ -207,7 +207,7 @@ body .pater {
 	content: '';
 	width: 100%;
 	height: calc(100% + 20px);
-	background: url(../img/sponsor/ink.png) no-repeat bottom left;
+	background: no-repeat bottom left;
 	background-size: 90%;
 	position: absolute;
 	bottom: 0;
@@ -221,7 +221,6 @@ body .pater {
 }
 
 .pater__title::before {
-	content: 'Sponsored by';
 	position: absolute;
 	top: 0;
 	left: 0;
