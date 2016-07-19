@@ -28,6 +28,7 @@ function signin (formData) {
     url: serverURL + 'signin',
     data: formData,
     success: function (response) {
+      console.log(response)
       // success save the repsonse
       window.localStorage.email = $('#inputEmail2').val()
       window.localStorage.auth_token = response.auth_token
@@ -56,7 +57,7 @@ $(function () {
 
     window.localStorage.removeItem('email')
     window.localStorage.removeItem('auth_token')
-    window.location.href = '../users/index.html'
+    window.location.href = '../index.html'
   })
 
   // listen for the form login
