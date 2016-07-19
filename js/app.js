@@ -2,6 +2,7 @@ console.clear()
 console.log('App.js is loaded')
 /* global $ */
 var serverURL = 'https://readr-app.herokuapp.com/'
+var currentUser = null || window.localStorage.email
 
 function signup (formData) {
   console.log(formData)
@@ -28,7 +29,7 @@ function signin (formData) {
     url: serverURL + 'signin',
     data: formData,
     success: function (response) {
-      console.log(response)
+      window.alert(response)
       // success save the repsonse
       window.localStorage.email = $('#inputEmail2').val()
       window.localStorage.auth_token = response.auth_token
@@ -47,9 +48,7 @@ function signin (formData) {
 $(function () {
   // if (!window.localStorage['email'] || !window.localStorage['auth_token']) loadUser()
   // globals $ currentUser //
-  function pageReady () {
-    console.log('Hello ' + currentUser.name)
-  }
+  console.log('Hello ' + currentUser)
 
   // logout users
   $('#logout').click(function (event) {
@@ -75,4 +74,6 @@ $(function () {
     var formData = $(this).serialize()
     signin(formData)
   })
+
+  $('#hello-user a').html('Hello, ' + currentUser)
 })
