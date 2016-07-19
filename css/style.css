@@ -45,6 +45,16 @@ img {
     margin-top: 20px;
 }
 
+/* CSS formatting for topic.html */
+div.grid__item>* {
+  font-size: 3vw;
+  color: black;
+}
+
+div.grid__item>*:hover {
+  color: white;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
     min-height: 100%;
@@ -61,13 +71,16 @@ img {
     height: 40px;
 }
 
-/* Big tablets to 1023px (width smaller than the 1140px row */ @media only screen and (min-width: 1200px) {
+/* Big tablets to 1023px (width smaller than the 1140px row */
+@media only screen and (min-width: 1200px) {
 }
 
-/* Small tablets to big tablets from 768 to 1023px */ @media only screen and (max-width: 1023px) {
+/* Small tablets to big tablets from 768 to 1023px */
+ @media only screen and (max-width: 1023px) {
 }
 
-/* Small phones to small tablets from 481 to 767px */ @media only screen and (max-width: 767px) {
+/* Small phones to small tablets from 481 to 767px */
+@media only screen and (max-width: 767px) {
     img {
         width: 90vw;
         height:auto;

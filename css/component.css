@@ -223,8 +223,8 @@
 
 .grid--style-2 ~ .grid-nav .icon {
 	stroke-width: 10px;
-	stroke: #dc4242;
-	color: #dc4242;
+	stroke: #DED9D9;
+	color: #000000;
 }
 
 .grid--style-3 ~ .grid-nav .icon {
@@ -235,7 +235,7 @@
 
 .grid--style-2 .caption {
 	position: absolute;
-	color: #dc4242;
+	color: #000000;
 	font-size: 3.5em;
 	line-height: 1;
 	z-index: 100;
@@ -248,7 +248,7 @@
 }
 
 .grid--style-2 .grid__img .caption {
-	font-size: 1.65em;
+	font-size: em;
 	max-width: 200px;
 	color: #2e2f31;
 }
@@ -362,4 +362,7 @@
 	.grid--style-2 .grid__item {
 		border-bottom: 30px solid #ece6e6;
 	}
+
+	.grid--style-2 .caption {
+		font-size: 1.5em;
 }
