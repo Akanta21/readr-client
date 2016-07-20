@@ -51,9 +51,9 @@ div.grid__img {
   color: black;
 }
 
-div.grid__item>*:hover {
-  color: white;
-}*/
+a:hover {
+  color: white 
+}
 
 .articleTitle {
   background: rgba(255,255,255,0.4)
