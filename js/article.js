@@ -2,7 +2,9 @@ console.log('article.js is loaded')
 /* global $ */
 $(document).ready(function () {
   var serverURL = 'https://readr-app.herokuapp.com/'
+
   var id = '578f011e9a69c01000487e58'
+
   $.ajax({
     type: 'GET',
     url: serverURL + 'articles/' + id,
@@ -15,6 +17,25 @@ $(document).ready(function () {
     data.article.topics.forEach(function (topic) {
       $('#topics').append('<li>' + topic.topic.toUpperCase() + '</li>')
     })
+  })
+
+  // Add likes functionality
+  $('#btn-likes').click(function () {
+    $.get(serverURL + 'articles/' + id)
+      .done(function (data) {
+        var liked = data.article.liked
+        liked++
+        console.log(liked)
+        $.ajax({
+          type: 'PATCH',
+          crossDomain: true,
+          url: serverURL + 'articles/' + id,
+          dataType: 'json'
+        }).done(function (data) {
+          console.log(liked)
+          data.article.liked
+        })
+      })
   })
 
   // get form data and post to articles api
