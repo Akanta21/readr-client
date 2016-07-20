@@ -255,16 +255,18 @@ ul#topics {
 .search-form input {
   box-sizing: border-box;
   font-family: 'Reem Kufi', sans-serif;
-  width: 900px;
-  max-width: 1000px;
+  width: 1100px;
+  /*max-width: 900px;*/
+  /*max-height: 300px;*/
   font-size: 5.5em;
-  background: transparent;
+  background: white;
+  /*opacity: 0.7;*/
   transition: all 0.3s;
   padding: 0 0.2em;
-  color: grey;
+  color: black;
   border: solid 1px transparent;
   border-bottom: solid 1px #666;
-  margin-bottom: 5em;
-  margin-left: -500px;
+  margin-bottom: 80em;
+  margin-left: -515px;
   outline: none;
 }
