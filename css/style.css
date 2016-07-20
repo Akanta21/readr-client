@@ -46,17 +46,21 @@ img {
 }
 
 /* CSS formatting for topic.html */
-div.grid__item>* {
+div.grid__img {
   font-size: 3vw;
   color: black;
 }
 
 div.grid__item>*:hover {
   color: white;
-}
+}*/
 
 .articleTitle {
   background: rgba(255,255,255,0.4)
+}
+
+h3 {
+  font-size: 2em !important
 }
 
 /* Wrapper for page content to push down footer */
