@@ -163,12 +163,12 @@ body {
   margin: 0em;
   padding: 0;
   font-family: 'Reem Kufi', sans-serif;
-  background-size: 100% 100%;
+  background-size: 50% 50%;
 }
 
 .search {
-  width: 100%;
-  max-width: 1280px;
+  width: 10%;
+  max-width: 100px;
   margin: 0 auto;
   text-align: center;
 }
@@ -180,6 +180,9 @@ body {
 
 .search-box {
   color: #fff;
+  height: 30px;
+  width: 300px;
+  align: top;
 }
 
 .inactive .introduction-text {
@@ -195,8 +198,8 @@ body {
 
 .search-box h1 {
 `font-family: 'Reem Kufi', sans-serif;
-  font-size: 3.5em;
-  margin: 1em 0 0 0;
+  font-size: 1.5em;
+  /*margin: 1em 0 0 0;*/
   line-height: 1;
   font-weight: normal;
 }
@@ -204,8 +207,8 @@ body {
 .cancel {
   display: inline-block;
   vertical-align: top;
-  width: 4.7em;
-  height: 4.7em;
+  width: 3em;
+  height: 3em;
   margin-top: 1em;
   cursor: pointer;
   opacity: 1;
@@ -229,7 +232,7 @@ body {
 .search-form {
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - 7em);
+  width: calc(80% - 10em);
   ;
 }
 
@@ -237,14 +240,14 @@ body {
   border: 1px solid black;
   font-size: 1.25em;
   max-width: 18em;
-  padding: 0.6em;
+  /*padding: 0.6em;*/
 }
 
 .main.inactive .search-form input {
   border: 2px solid black;
   font-size: 1.25em;
   max-width: 18em;
-  padding: 0.6em;
+  /*padding: 0.6em;*/
 }
 
 .search-form input {
@@ -255,7 +258,7 @@ body {
   font-size: 5.5em;
   background: transparent;
   transition: all 0.3s;
-  padding: 0 0.2em;
+  /*padding: 0 0.2em;*/
   color: grey;
   border: solid 1px transparent;
   border-bottom: solid 1px #666;
