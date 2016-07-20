@@ -127,6 +127,14 @@ h3 {
   margin: 10px;
 }
 
+#topics-list li {
+  text-decoration: none;
+  list-style: none;
+  padding-left: 10px;
+  border: 2px solid black;
+  margin: 10px;
+}
+
 #source {
   margin: 20px 0 60px 0;
 }
