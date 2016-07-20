@@ -36,8 +36,7 @@ function getArticlesByTopic () {
         if (counter === 0) {
           currentColumn = $('<div class="grid__column">')
           currentPage.append(currentColumn)
-          counter = 2
-        // getRandomInt(0, 3)
+          counter = getRandomInt(1, 2)
         }
         counter--
         current_Grid = $('<div class="grid__item" data-delay="50" style="transform: translateY(0px)">')
