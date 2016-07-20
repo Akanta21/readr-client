@@ -90,3 +90,63 @@ div.grid__item>*:hover {
         height:auto;
     }
 }
+
+/*CSS FOR ARTICLE.HTML STARTS*/
+#article-body img {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+
+#article-body {
+  text-align: justify;
+}
+
+#article-body figcaption {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+#tldr li {
+  text-align: justify;
+  text-decoration: none;
+  list-style: none;
+  padding-left: 10px;
+  border-left: 3px solid black;
+}
+
+#topics li {
+  text-decoration: none;
+  list-style: none;
+  padding-left: 10px;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+#source {
+  margin: 20px 0 60px 0;
+}
+
+#source a {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 1.5em;
+}
+
+ul#topics {
+  padding: 0 60px 0 60px;
+}
+
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+/*CSS FOR ARTICLE.HTML ENDS*/
