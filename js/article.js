@@ -3,7 +3,7 @@ console.log('article.js is loaded')
 $(document).ready(function () {
   var serverURL = 'https://readr-app.herokuapp.com/'
 
-  var id = '578f011e9a69c01000487e58'
+  var id = '578f1782ce0949100005aa7d'
 
   $.ajax({
     type: 'GET',
@@ -25,15 +25,17 @@ $(document).ready(function () {
       .done(function (data) {
         var liked = data.article.liked
         liked++
-        console.log(liked)
+        // console.log(liked)
         $.ajax({
           type: 'PATCH',
           crossDomain: true,
           url: serverURL + 'articles/' + id,
-          dataType: 'json'
-        }).done(function (data) {
+          dataType: 'json',
+          data: {liked: liked}
+        })
+        .done(function (data) {
           console.log(liked)
-          data.article.liked
+          // data.article.liked
         })
       })
   })
