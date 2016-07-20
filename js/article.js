@@ -3,7 +3,7 @@ console.log('article.js is loaded')
 $(document).ready(function () {
   var serverURL = 'https://readr-app.herokuapp.com/'
 
-  var id = '578f1782ce0949100005aa7d'
+  var id = '578e07585d16d1384ce6c2d1'
 
   $.ajax({
     type: 'GET',
@@ -35,6 +35,27 @@ $(document).ready(function () {
         })
         .done(function (data) {
           console.log(liked)
+          // data.article.liked
+        })
+      })
+  })
+
+  // Add share count functionality
+  $('#btn-share').click(function () {
+    $.get(serverURL + 'articles/' + id)
+      .done(function (data) {
+        var share = data.article.shared
+        share++
+        // console.log(liked)
+        $.ajax({
+          type: 'PATCH',
+          crossDomain: true,
+          url: serverURL + 'articles/' + id,
+          dataType: 'json',
+          data: {shared: share}
+        })
+        .done(function (data) {
+          console.log(share)
           // data.article.liked
         })
       })
