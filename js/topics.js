@@ -56,8 +56,8 @@ function getArticlesByTopic () {
         currentTitle = $('<h3 class="caption topic articleTitle" style="transform: translateY(0px); background: rgba(255,255,255,0.6); padding: 5px 20px 20px 5px">')
         current_Grid.append(currentTitle)
         currentTitle.append(data.articles[i].title.capitalize())
-        // $('h3.topic').text(data.articles[i].title)
-        // .addClass('articleTitle')
+      // $('h3.topic').text(data.articles[i].title)
+      // .addClass('articleTitle')
       // $('.grid__article').append(data.article[i].tldr[0].summary)
       }
       setCurrentGrid()
