@@ -12,10 +12,10 @@ function getArticlesByTopic () {
   $.ajax({
     url: 'https://readr-app.herokuapp.com/articles/',
     success: function (data) {
-      console.log(data.article[0])
+      console.log(data.articles[0])
       for (var i = 0; i < 13; i++) {
-        $('div.grid__item__' + i).css('background-image', 'url(' + data.article[i].images[0] + ')')
-        $('h3.topic__' + i).append(data.article[i].title.capitalize()).addClass('articleTitle')
+        $('div.grid__item__' + i).css('background-image', 'url(' + data.articles[i].images[0] + ')')
+        $('h3.topic__' + i).append(data.articles[i].title.capitalize()).addClass('articleTitle')
       // $('.grid__article').append(data.article[i].tldr[0].summary)
       }
     }
