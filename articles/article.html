@@ -1,80 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="read, articles, news, blog" />
-    <meta name="description" content="Aggregate, Currate, Serve" />
-    <title>Readr | Aggregate, Currate, Serve</title>
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Cousine:400,400italic,700,700italic" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="../css/ionicons.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="keywords" content="read, articles, news, blog" />
+  <meta name="description" content="Aggregate, Currate, Serve" />
+  <title>Readr | Aggregate, Currate, Serve</title>
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-theme.css">
+  <link rel="stylesheet" type="text/css" href="../css/ionicons.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
 </head>
 <body>
-    <!--navbar-->
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <!--navbar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../index.html"><img src="../img/READR_black.png"></a>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><img src="../img/READR_black.png"></a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Create Article</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#signup-modal"><strong>Sign up </strong>&nbsp;&nbsp;/ </a></li>
-            <li><a href="#" data-toggle="modal" data-target="#signin-modal">Sign in</a></li>
-          </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#signup-modal"><strong>Sign up </strong>&nbsp;&nbsp;/ </a></li>
+          <li><a href="#" data-toggle="modal" data-target="#signin-modal">Sign in</a></li>
+        </ul>
       </div>
     </div>
-    </nav>
-    <!--End of navbar-->
+  </nav>
+  <!--End of navbar-->
 
-    <div id="wrap">
-      <div class="container-fluid" style="margin-top: 40px;">
-        <div class="col-lg-1 col-md-1"></div>
-        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-          <div id="title" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
-          <div id="article-body"></div>
-          <div id="source"></div>
+  <div id="wrap">
+    <div class="container-fluid" style="margin-top: 40px;">
+      <div class="col-lg-1 col-md-1"></div>
+      <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+        <div id="title" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body"></div>
+        <div id="source"></div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="row" style="text-align: center; margin: 30px 0 70px 0;">
+          <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-heart-empty" style="text-align: center;"></i></button>
+          <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-send" style="text-align: center;"></i></button>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-          <div class="row" style="text-align: center; margin: 30px 0 70px 0;">
-            <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-heart-empty" style="text-align: center;"></i></button>
-            <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-send" style="text-align: center;"></i></button>
-          </div>
-          <h3>tl;dr</h3>
-          <ul id="tldr"></ul>
-          <div class="row" style="text-align: center; margin: 20px 0 100px 0;">
-            <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-plus" style="text-align: center;"></i></button>
-          </div>
-          <h3>topics</h3>
-          <ul id="topics"></ul>
-          <div class="row" style="text-align: center; margin-top: 20px;">
-            <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-pencil" style="text-align: center;"></i></button>
-          </div>
+        <h3>tl;dr</h3>
+        <ul id="tldr"></ul>
+        <div class="row" style="text-align: center; margin: 20px 0 100px 0;">
+          <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-plus" style="text-align: center;"></i></button>
+        </div>
+        <h3>topics</h3>
+        <ul id="topics"></ul>
+        <div class="row" style="text-align: center; margin-top: 20px;">
+          <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-pencil" style="text-align: center;"></i></button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- <footer class="footer">
-        <div class="container">
-          <p class="text-center">Made with <span class="ion-ios-heart-outline"> by
-          <a herf="https://github.com/davified/">David Tan</a>, <a href="https://github.com/floatonok">Isabella Ong</a>, <a href="https://github.com/byebye321">Stephanie Hendriks</a>, <a href="https://github.com/flight846">Yazid Ismail</a></span></p>
+  <!-- Modal -->
+  <div class="modal fade" id="create-article-modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add a New Article</h4>
         </div>
-    </footer> -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/article.js"></script>
+        <div class="modal-body">
+          <form id="create-article-form">
+
+            <div class="form-group">
+              <label for="source-url">Source URL</label>
+              <input type="text" class="form-control" name="url" placeholder="Add Article's URL Here">
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-transparent">Submit</button>
+            </div>
+          </form>
+
+          <form id="add-topics-form" style="display: none;">
+
+            <div class="form-group">
+              <label for="topics">Topics</label>
+              <input type="text" class="form-control" name= "topics" id="topics" placeholder="Add As Many Relevant Topics Here">
+            </div>
+
+            <ul id="topics-list" class="col-lg-4 col-md-4"></ul>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-transparent">Submit</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="form-group">
+<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+<div class="col-sm-10">
+<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+</div>
+</div> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/article.js"></script>
 </body>
 </html>
