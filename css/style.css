@@ -168,22 +168,22 @@ ul#topics {
   justify-content: flex-end;
 }
 .search {
-  /*width: 10%;
+  width: 10%;
   max-width: 100px;
   margin: 0 auto;
-  text-align: center;*/
+  text-align: center;
 }
 
 .query-box {
-  /*position: relative;
-  z-index: 1;*/
+  position: relative;
+  z-index: 1;
 }
 
 .search-box {
   color: #fff;
   height: 30px;
   width: 200px;
-  /*align: top;*/
+  align: top;
 }
 
 .inactive .introduction-text {
@@ -200,17 +200,17 @@ ul#topics {
 .search-box h1 {
 `font-family: 'Reem Kufi', sans-serif;
   font-size: 1.5em;
-  /*margin: 1em 0 0 0;*/
+  margin: 1em 0 0 0;
   line-height: 1;
   font-weight: normal;
 }
 
 .cancel {
   display: inline-block;
-  vertical-align: top;
-  width: 3em;
-  height: 3em;
-  margin-top: 1em;
+  vertical-align: left;
+  width: 1em;
+  height: 1em;
+  margin-top: absolute;
   cursor: pointer;
   opacity: 1;
   visibility: visible;
@@ -232,7 +232,7 @@ ul#topics {
 
 .search-form {
   display: inline-block;
-  /*vertical-align: top;*/
+  vertical-align: middle;
   /*width: calc(80% - 10em);*/
   ;
 }
@@ -241,8 +241,8 @@ ul#topics {
   border: 1px solid black;
   font-size: 1.25em;
   max-width: 18em;
-  /*margin-left: 0px;*/
-  /*padding: 0.6em;*/
+  margin-left: 0px;
+  padding: 0.6em;
 }
 
 .main.inactive .search-form input {
@@ -255,16 +255,16 @@ ul#topics {
 .search-form input {
   box-sizing: border-box;
   font-family: 'Reem Kufi', sans-serif;
-  width: 1000px;
-  max-width: 100%;
+  width: 900px;
+  max-width: 1000px;
   font-size: 5.5em;
   background: transparent;
   transition: all 0.3s;
-  /*padding: 0 0.2em;*/
+  padding: 0 0.2em;
   color: grey;
   border: solid 1px transparent;
   border-bottom: solid 1px #666;
-  margin-bottom: 0.1em;
-  /*margin-left: -500px;*/
+  margin-bottom: 5em;
+  margin-left: -500px;
   outline: none;
 }
