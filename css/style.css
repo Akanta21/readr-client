@@ -159,12 +159,12 @@ ul#topics {
 
 /*CSS FOR ARTICLE.HTML ENDS*/
 
-body {
+/*body {
   margin: 0em;
   padding: 0;
   font-family: 'Reem Kufi', sans-serif;
   background-size: 50% 50%;
-}
+}*/
 
 .search {
   width: 10%;
@@ -174,8 +174,8 @@ body {
 }
 
 .query-box {
-  position: relative;
-  z-index: 1;
+  /*position: relative;
+  z-index: 1;*/
 }
 
 .search-box {
