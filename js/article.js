@@ -21,7 +21,6 @@ $(document).ready(function () {
 
   // Add likes functionality
   $('#btn-likes').click(function () {
-    console.log(1)
     $.get(serverURL + 'articles/' + id)
       .done(function (data) {
         var liked = data.article.liked
