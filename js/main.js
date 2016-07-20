@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2016, Codrops
  * http://www.codrops.com
  */
@@ -14,7 +14,7 @@
 
 	// Helper vars and functions.
 	function extend( a, b ) {
-		for( var key in b ) { 
+		for( var key in b ) {
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -123,7 +123,7 @@
 		this.el = el;
 
 		var child = this.el.children[0];
-		this.type = child.nodeName === 'audio' || child.nodeName === 'video' || 
+		this.type = child.nodeName === 'audio' || child.nodeName === 'video' ||
 					child.getAttribute('data-type') && ( child.getAttribute('data-type') === 'youtube' || child.getAttribute('data-type') === 'vimeo' ) ?
 						'video' : 'general';
 		// Options/Settings.
@@ -204,10 +204,10 @@
 					if( callback && typeof callback == 'function' ) {
 						callback();
 
-						// It the type is video then play or pause 
+						// It the type is video then play or pause
 						if( self.type === 'video' ) {
 							if( action === 'uncover' ) {
-								//self.player.seek(0); // this restarts the video 
+								//self.player.seek(0); // this restarts the video
 								self.player.play();
 							}
 							else {
@@ -219,7 +219,7 @@
 					}
 					return;
 				}
-				
+
 				anime({
 					targets: self.path,
 					d : steps[pos],
@@ -251,6 +251,7 @@
 		// Array of Grid objs.
 		this.grids = [];
 		this.gridsTotal = this.gridElems.length,
+		console.log(this.gridsTotal);
 		this.currentGridIdx = 0,
 		this.nav = {
 			prev : this.el.querySelector('.grid-nav > button.grid__button--prev'),
@@ -296,7 +297,7 @@
 		// Navigation ctrls.
 		this.nav.prev.addEventListener('click', function() { self._navigate('prev'); });
 		this.nav.next.addEventListener('click', function() { self._navigate('next'); });
-		
+
 		// Keyboard navigation events.
 		document.addEventListener('keydown', function(ev) {
 			var keyCode = ev.keyCode || ev.which;
@@ -321,7 +322,7 @@
 		this.isAnimating = true;
 
 		var currentIdx = this.currentGridIdx;
-		
+
 		if( direction === 'next' ) {
 			this.currentGridIdx = this.currentGridIdx < this.gridsTotal - 1 ? this.currentGridIdx + 1 : 0;
 		}
