@@ -158,19 +158,16 @@ ul#topics {
 }
 
 /*CSS FOR ARTICLE.HTML ENDS*/
-
-/*body {
-  margin: 0em;
-  padding: 0;
-  font-family: 'Reem Kufi', sans-serif;
-  background-size: 50% 50%;
-}*/
-
+#search {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
 .search {
-  width: 10%;
+  /*width: 10%;
   max-width: 100px;
   margin: 0 auto;
-  text-align: center;
+  text-align: center;*/
 }
 
 .query-box {
@@ -181,8 +178,8 @@ ul#topics {
 .search-box {
   color: #fff;
   height: 30px;
-  width: 300px;
-  align: top;
+  width: 200px;
+  /*align: top;*/
 }
 
 .inactive .introduction-text {
@@ -231,8 +228,8 @@ ul#topics {
 
 .search-form {
   display: inline-block;
-  vertical-align: top;
-  width: calc(80% - 10em);
+  /*vertical-align: top;*/
+  /*width: calc(80% - 10em);*/
   ;
 }
 
@@ -240,20 +237,21 @@ ul#topics {
   border: 1px solid black;
   font-size: 1.25em;
   max-width: 18em;
+  /*margin-left: 0px;*/
   /*padding: 0.6em;*/
 }
 
 .main.inactive .search-form input {
   border: 2px solid black;
   font-size: 1.25em;
-  max-width: 18em;
+  max-width: 12em;
   /*padding: 0.6em;*/
 }
 
 .search-form input {
   box-sizing: border-box;
   font-family: 'Reem Kufi', sans-serif;
-  width: 100%;
+  width: 1000px;
   max-width: 100%;
   font-size: 5.5em;
   background: transparent;
@@ -263,5 +261,6 @@ ul#topics {
   border: solid 1px transparent;
   border-bottom: solid 1px #666;
   margin-bottom: 0.1em;
+  /*margin-left: -500px;*/
   outline: none;
 }
