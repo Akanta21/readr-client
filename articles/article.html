@@ -29,7 +29,8 @@
         </button>
         <a class="navbar-brand" href="../index.html"><img src="../img/READR_black.png"></a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <!-- <div id="navbar" class="navbar-collapse collapse"> -->
+
         <ul class="nav navbar-nav navbar-right">
           <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
           <li><a href="#" data-toggle="modal" data-target="#signup-modal"><strong>Sign up </strong>&nbsp;&nbsp;/ </a></li>
@@ -42,10 +43,17 @@
       <section class="search">
         <div class="search-box">
           <div class="cancel"></div>
-          <form class="search-form">
-            <div class="query-box">
-              <input class="query-input" type="text" autocomplete="off" name="search" placeholder="READR ask me anything!">
+            <form class="search-form">
+              <div class="query-box">
+                <input class="query-input" type="text" autocomplete="off" name="search" placeholder="READR ask me anything!">
+              </div>
             </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
 </nav>
 <!--End of navbar-->
 
@@ -60,7 +68,7 @@
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div class="row" style="text-align: center; margin: 30px 0 70px 0;">
         <button type="button" class="btn btn-circle btn-lg" id="btn-likes"><i class="glyphicon glyphicon-heart-empty" style="text-align: center;"></i></button>
-        <button type="button" class="btn btn-circle btn-lg"><i class="glyphicon glyphicon-send" style="text-align: center;"></i></button>
+        <button type="button" class="btn btn-circle btn-lg"id="btn-share"><i class="glyphicon glyphicon-send" style="text-align: center;"></i></button>
       </div>
       <h3>tl;dr</h3>
       <ul id="tldr"></ul>
