@@ -12,7 +12,7 @@ function signup (formData) {
     data: formData,
     success: function (response) {
       // then redirect
-      window.location.href = './users/index.html'
+      window.location.href = './index.html'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
@@ -37,7 +37,7 @@ function signin (formData) {
       window.localStorage.email = $('#inputEmail2').val()
       window.localStorage.auth_token = response.user.auth_token
       // then redirect
-      window.location.href = './users/index.html'
+      window.location.href = './index.html'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
@@ -47,6 +47,7 @@ function signin (formData) {
     }
   })
 }
+console.log('hi')
 // check for user auth
 $(function () {
   // if (!window.localStorage['email'] || !window.localStorage['auth_token']) loadUser()
@@ -58,7 +59,6 @@ $(function () {
     event.preventDefault()
 
     // window.locationStorage.removeItem('id')
-    window.localStorage.removeItem('id')
     window.localStorage.removeItem('email')
     window.localStorage.removeItem('auth_token')
     window.location.href = '../index.html'

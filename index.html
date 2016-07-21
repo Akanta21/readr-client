@@ -32,40 +32,38 @@
 <body class="demo-1">
     <!--navbar-->
     <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="./index.html"><img src="./img/READR_black.png"></a>
-      </div>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./index.html"><img src="./img/READR_black.png"></a>
+        </div>
 
-      <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#signup-modal"><strong>Sign up </strong>&nbsp;&nbsp;/ </a></li>
-            <li><a href="#" data-toggle="modal" data-target="#signin-modal">Sign in</a></li>
-            <li><a href="#" id="signout" style="display: none;">Sign out</a></li>
-          </ul>
-      </div>
-      <div id='search' class="main inactive">
-       <section class="search">
-         <div class="search-box">
-           <div class="cancel"></div>
-             <form class="search-form">
-               <div class="query-box">
-                 <input class="query-input" type="text" autocomplete="off" name="search" placeholder="READR ask me anything!">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
+              <li id="signup-form"><a href="#" data-toggle="modal" data-target="#signup-modal"><strong>Sign up </strong>&nbsp;&nbsp;/ </a></li>
+              <li id="signin-form"><a href="#" data-toggle="modal" data-target="#signin-modal">Sign in</a></li>
+              <li><a href="#" id="signout" style="display: none;">Sign out</a></li>
+            </ul>
+        </div>
+        <div id='search' class="main inactive">
+         <section class="search">
+           <div class="search-box">
+             <div class="cancel"></div>
+               <form class="search-form">
+                 <div class="query-box">
+                   <input class="query-input" type="text" autocomplete="off" name="search" placeholder="READR ask me anything!">
+                 </div>
                </div>
-             </div>
-           </form>
-         </div>
-       </div>
-     </section>
-   </div>
-    </div>
+             </form>
+           </div>
+         </section>
+      </div>
     </nav>
     <!--End of navbar-->
           <!-- Start of signup modal -->
@@ -194,37 +192,26 @@
             <p>Say goodbye to internet junk.</p>
           </div>
 
-          <div class="container-fluid" id="homegrid">
-          </div>
+          <div class="container-fluid" id="homegrid"></div>
           <footer class="footer">
               <div class="container">
                 <p class="text-center">Made with <span class="ion-ios-heart-outline"> by
                 <a href="https://github.com/davified/">David Tan</a>, <a href="https://github.com/floatonok">Isabella Ong</a>, <a href="https://github.com/byebye321">Stephanie Hendricks</a>, <a href="http://github.com/flight846">Yazid Ismail</a></span></p>
-            <!-- </div> -->
-                  <!-- <div class="row"> -->
-                      <!-- <div class="col-md-6">
-                          <p>For developers</p>
-                          <p><a href="http://readr-app.herokuapp.com/">Public API</a></p>
-                          <p><a href="https://github.com/davified/readr">Contact Us</a></p>
-                      </div>
-                      <div class="col-md-6"> -->
-
-                <!-- </div> -->
               </div>
           </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/anime.min.js"></script>
 		<script src="./js/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/bar.js"></script>
     <script src="./js/home.js"></script>
-		<script src="./js/main.js"></script>
     <script>
     (function() {
       new GridSlideshow(document.querySelector('.grid-pages'));
     })();
     </script>
-    <script src="./js/bar.js"></script>
-    <script src="./js/scrollindicator.jquery.min.js"></script>
+    <script src="./js/scrollindicator.jquery.js"></script>
     <script type="text/javascript" src="./js/article.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
 </body>
