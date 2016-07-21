@@ -169,7 +169,6 @@ $(document).ready(
       $('#add-tldr-form').on('submit', function (e) {
         e.preventDefault()
         var data = $(this).serialize()
-        console.log(data)
 
         $.ajax({
           type: 'PATCH',
@@ -182,6 +181,21 @@ $(document).ready(
         })
       })
       // add event listener for editing topics
+      $('#edit-topics-form').on('submit', function (e) {
+        e.preventDefault()
+        var data = $(this).serialize()
+        console.log(data)
+
+        $.ajax({
+          type: 'PATCH',
+          url: serverURL + 'articles/' + id,
+          dataType: 'json',
+          data: data
+        }).done(function (res) {
+          var newId = res.article._id
+          window.location.replace('https://flight846.github.io/readr-client/articles/article.html?id=' + newId)
+        })
+      })
     }
     // else redirect back to home page
   })

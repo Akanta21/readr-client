@@ -52,7 +52,7 @@ div.grid__img {
 }
 
 a:hover {
-  color: white
+  color: grey
 }
 
 .articleTitle {
@@ -292,7 +292,7 @@ box {
 }
 
 a:hover {
-  color: white;
+  color: grey;
   transition: all 0.5s;
 }
 
