@@ -170,9 +170,8 @@ $(document).ready(
           console.log(errorThrown)
         })
       })
-
       // add event listener for adding tldr
-
-    // add event listener for editing topics
+      // add event listener for editing topics
     }
+    // else redirect back to home page
   })
