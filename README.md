@@ -23,7 +23,7 @@ jQuery, bootstrap, fontawesome
 
 #Companion API client
 
-[Readr | Aggregate, currate, serve](https://flight846.github.io/readr-client/)
+[Readr | Aggregate, curate, serve](https://flight846.github.io/readr-client/)
 
 ##Team
 
