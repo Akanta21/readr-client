@@ -19,7 +19,7 @@ function signup (formData) {
       window.localStorage.email = $('#inputEmail2').val()
       window.localStorage.auth_token = response.user.auth_token
       // then redirect
-      window.location.href = './index.html'
+      window.location.href = './articles/article.html'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
@@ -44,7 +44,7 @@ function signin (formData) {
       window.localStorage.email = $('#inputEmail2').val()
       window.localStorage.auth_token = response.user.auth_token
       // then redirect
-      window.location.href = './index.html'
+      window.location.href = './article/article.html'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
