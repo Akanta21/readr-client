@@ -89,6 +89,7 @@ $(function () {
     $('#sign-in, #sign-up').hide()
   })
 
+  if (currentUser === null) $('#sign-in, #sign-up, #add-article').hide()
   $('#hello-user a').html('Hello, ' + currentUser)
   $('#user-name').html('Welcome ' + window.localStorage.email)
   $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
