@@ -158,7 +158,7 @@ $(document).ready(
           }).done(function (res) {
           // console.log(res)
             var newId = res.article._id
-            window.location.replace('file:///Users/isabellaong/General%20Assembly/Projects/readr-client/articles/article.html?id=' + newId)
+            window.location.replace('https://flight846.github.io/readr-client/articles/article.html?id=' + newId)
           // $('#topics-list').append('<li>' + data2.toUpperCase() + '</li>')
           })
         })
