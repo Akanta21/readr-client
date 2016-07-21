@@ -11,7 +11,7 @@ search.addEventListener('focus', function(e) {
   main.classList = 'main'
 })
 
-//cancel on X click or ESC
+// cancel on X click or ESC
 var cancel = document.getElementsByClassName('cancel')[0]
 cancel.addEventListener('click', cancelInput)
 

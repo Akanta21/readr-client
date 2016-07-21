@@ -12,12 +12,11 @@
   <link rel="stylesheet" href="../css/bootstrap-theme.css">
   <link rel="stylesheet" type="text/css" href="../css/ionicons.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="ProgressBarWars.css">
   <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
 </head>
 
 <body>
-  <!--navbar-->
+  <!-- navbar-->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -29,7 +28,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><img src="../img/READR_black.png"></a>
       </div>
-      <!-- <div id="navbar" class="navbar-collapse collapse"> -->
+       <div id="navbar" class="navbar-collapse collapse">
 
         <ul class="nav navbar-nav navbar-right">
           <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
@@ -55,7 +54,9 @@
   </div>
 
 </nav>
+<div id= "scroll" style= "position:fixed; width: 100%"></div>
 <!--End of navbar-->
+
 
 <div id="wrap">
   <div class="container-fluid" style="margin-top: 40px;">
@@ -102,7 +103,7 @@
             <input type="text" class="form-control" name="url" placeholder="Add Article's URL Here">
           </div>
 
-          <div class="form-group">
+          <div class="form-group" id="create-article-submit">
             <button type="submit" class="btn btn-transparent">Submit</button>
           </div>
         </form>
@@ -113,8 +114,9 @@
             <label for="topics">Topics</label>
             <input type="text" class="form-control" name= "topics" id="topics" placeholder="Add As Many Relevant Topics Here">
           </div>
-
-          <ul id="topics-list" class="col-lg-4 col-md-4"></ul>
+          <div class="row">
+            <ul id="topics-list" class="col-lg-4 col-md-4"></ul>
+          </div>
 
           <div class="form-group">
             <button type="submit" class="btn btn-transparent">Submit</button>
@@ -130,8 +132,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/bar.js"></script>
-<script src="ProgressBarWars.js"></script>
-
+<script src="../js/scrollindicator.jquery.min.js"></script>
 <script type="text/javascript" src="../js/article.js"></script>
 
 </body>
