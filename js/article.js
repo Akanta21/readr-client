@@ -55,6 +55,7 @@ $(document).ready(
         .done(function (data) {
           var liked = data.article.liked
           liked++
+          $('#liked-count').html(liked)
           // console.log(liked)
           $.ajax({
             type: 'PATCH',
@@ -65,7 +66,6 @@ $(document).ready(
           })
           .done(function (data) {
             console.log(liked)
-            // data.article.liked
           })
           if (currentUser !== null) {
             $.ajax({
