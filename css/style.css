@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    padding-top: 85px;
+    padding-top: 55px;
 }
 
 a:active,
@@ -33,6 +33,7 @@ a:focus {
 .navbar-brand img {
   height: 40px;
   width: auto;
+  margin: -9px
 }
 
 img {
@@ -169,19 +170,20 @@ ul#topics {
   display: flex;
   width: 100%;
   justify-content: flex-end;
+  z-index: 1;
 }
 .search {
   width: 10%;
-  max-width: 100px;
+  /*max-width: 100px;*/
   margin: 0 auto;
   text-align: center;
 }
 
 .query-box {
-  /*position: relative;
+  position: relative;
   align: top;*/
-  /*z-index: 1;*/
-  /*padding: 5px*/
+  z-index: 1;
+  padding: 5px
 }
 
 .search-box {
@@ -238,12 +240,13 @@ ul#topics {
 .search-form {
   display: inline-block;
   vertical-align: middle;
+  padding-top: 5px;
   /*width: calc(80% - 10em);*/
   ;
 }
 
 .search-form input.inactive {
-  border: 1px solid black;
+  border: 1px solid grey;
   font-size: 1.25em;
   max-width: 18em;
   margin-left: 0px;
@@ -251,7 +254,7 @@ ul#topics {
 }
 
 .main.inactive .search-form input {
-  border: 2px solid black;
+  border: 1px solid darkgrey;
   font-size: 1.25em;
   max-width: 12em;
   /*padding: 0.6em;*/
@@ -265,13 +268,13 @@ ul#topics {
   /*max-height: 300px;*/
   font-size: 5.5em;
   background: white;
-  opacity: 0.9;
+  opacity: 1;
   transition: all 0.3s;
   color: black;
   border: solid 1px transparent;
   border-bottom: solid 1px #666;
   margin-bottom: 0em;
-  margin-left: -515px;
+  margin-left: -415px;
   outline: none;
 }
 
@@ -342,7 +345,7 @@ progress.scrollindicator,
 div.scrollindicator {
   margin-bottom: 20px;
   position: fixed;
-  -moz-animation: neon1 1.5s ease-in-out infinite }
+  -moz-animation: neon1 0.1s ease-in-out infinite }
 
 progress.scrollindicator {
   -webkit-appearance: none;

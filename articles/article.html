@@ -28,30 +28,25 @@
         </button>
         <a class="navbar-brand" href="../index.html"><img src="../img/READR_black.png"></a>
       </div>
-       <div id="navbar" class="navbar-collapse collapse">
-
-        <ul class="nav navbar-nav navbar-right">
-          <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
-          <li><a href="#" id="#logout">Sign out</a></li>
-        </ul>
-      </div>
-    </div>
-
-     <div id='search' class="main inactive">
-      <section class="search">
-        <div class="search-box">
-          <div class="cancel"></div>
-            <form class="search-form">
-              <div class="query-box">
-                <input class="query-input" type="text" autocomplete="off" name="search" placeholder="READR ask me anything!">
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
+      <main class="container">
+        <div id='search' class="main inactive">
+         <section class="search">
+           <div class="search-box">
+             <div class="cancel"></div>
+               <form class="search-form">
+                 <div class="query-box">
+                   <input class="query-input" type="text" autocomplete="off" name="search" placeholder="Search for anything">
+                 </div>
+               </form>
+               <ul class="nav navbar-nav navbar-right">
+                 <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
+                 <li><a href="#" id="#logout">Sign out</a></li>
+               </ul>
+             </div>
+         </section>
+       </div>
+    </main>
   </div>
-
 </nav>
 <div id= "scroll" style= "position:fixed; width: 100%"></div>
 <!--End of navbar-->
