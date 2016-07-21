@@ -34,7 +34,7 @@ $(document).ready(
     $.ajax({
       type: 'GET',
       url: serverURL + 'articles/' + id,
-      dataType: 'json'
+      dataType: 'jsonp'
     }).done(function (data) {
       console.log(data)
       $('#title').append(data.article.title.toUpperCase())
@@ -131,6 +131,7 @@ $(document).ready(
       $.ajax({
         type: 'POST',
         url: 'https://readr-app.herokuapp.com/articles',
+        dataType: 'jsonp',
         data: data
       }).done(function (res) {
       // $('#title').empty().append(res.article.title.toUpperCase())
@@ -154,6 +155,7 @@ $(document).ready(
           $.ajax({
             type: 'PATCH',
             url: 'https://readr-app.herokuapp.com/articles/' + res.article._id,
+            dataType: 'jsonp',
             data: data2
           }).done(function (res) {
           // console.log(res)
