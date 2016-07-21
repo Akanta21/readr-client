@@ -11,6 +11,13 @@ function signup (formData) {
     url: serverURL + 'signup',
     data: formData,
     success: function (response) {
+      window.alert(response)
+      console.log(response.user._id)
+      console.log(response.user.auth_token)
+      // success save the repsonse
+      window.localStorage.id = response.user._id
+      window.localStorage.email = $('#inputEmail2').val()
+      window.localStorage.auth_token = response.user.auth_token
       // then redirect
       window.location.href = './index.html'
     },
@@ -70,6 +77,7 @@ $(function () {
     var formData = $(this).serialize()
     console.log(formData)
     signup(formData)
+    $('#sign-in, #sign-up').hide()
   })
 
   // Signing in users
@@ -78,6 +86,7 @@ $(function () {
     event.preventDefault()
     var formData = $(this).serialize()
     signin(formData)
+    $('#sign-in, #sign-up').hide()
   })
 
   $('#hello-user a').html('Hello, ' + currentUser)
