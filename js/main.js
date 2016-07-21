@@ -251,7 +251,6 @@
 		// Array of Grid objs.
 		this.grids = [];
 		this.gridsTotal = this.gridElems.length,
-		console.log(this.gridsTotal);
 		this.currentGridIdx = 0,
 		this.nav = {
 			prev : this.el.querySelector('.grid-nav > button.grid__button--prev'),
