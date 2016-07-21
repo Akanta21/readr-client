@@ -13,9 +13,9 @@ $(document).ready(
       return decodeURIComponent(results[2].replace(/\+/g, ' '))
     }
 
-  var serverURL = 'https://readr-app.herokuapp.com/'
-  var currentUser = null || window.localStorage.id
-  var id = getParameterByName('id')
+    var serverURL = 'https://readr-app.herokuapp.com/'
+    var currentUser = null || window.localStorage.id
+    var id = getParameterByName('id')
 
     $('#scroll').scrollIndicator({
 
@@ -30,10 +30,6 @@ $(document).ready(
       // Use of progress element. Disable for CSS3 animation.
       html5: false
     })
-
-    var serverURL = 'https://readr-app.herokuapp.com/'
-    // var id = '578e07585d16d1384ce6c2d1'
-    var id = getParameterByName('id')
 
     $.ajax({
       type: 'GET',
@@ -50,8 +46,8 @@ $(document).ready(
       })
     })
   // Add likes functionality
-  $('#btn-likes').click(function () {
-    $.get(serverURL + 'articles/' + id)
+    $('#btn-likes').click(function () {
+      $.get(serverURL + 'articles/' + id)
       .done(function (data) {
         var liked = data.article.liked
         liked++
@@ -132,7 +128,6 @@ $(document).ready(
       var data = $(this).serialize()
       console.log(data)
 
-
       $.ajax({
         type: 'POST',
         url: 'https://readr-app.herokuapp.com/articles',
@@ -146,34 +141,33 @@ $(document).ready(
       // res.article.topics.forEach(function (topic) {
       //   $('#topics').append('<li>' + topic.topic + '</li>')
       // })
-      $('#create-article-submit').hide()
-      $('#add-topics-form').show()
-      res.article.topics.forEach(function (topic) {
-        $('#topics-list').append('<li>' + topic.topic.toUpperCase() + '</li>')
-      })
-      $('#add-topics-form').on('submit', function (e) {
-        e.preventDefault()
-        var data2 = $(this).serialize()
-        console.log(data2)
-
-        $.ajax({
-          type: 'PATCH',
-          url: 'https://readr-app.herokuapp.com/articles/' + res.article._id,
-          data: data2
-        }).done(function (res) {
-          // console.log(res)
-          var newId = res.article._id
-          window.location.replace('file:///Users/isabellaong/General%20Assembly/Projects/readr-client/articles/article.html?id=' + newId)
-          // $('#topics-list').append('<li>' + data2.toUpperCase() + '</li>')
+        $('#create-article-submit').hide()
+        $('#add-topics-form').show()
+        res.article.topics.forEach(function (topic) {
+          $('#topics-list').append('<li>' + topic.topic.toUpperCase() + '</li>')
         })
-      })
-    }).fail(function (jqXHR, textStatus, errorThrown){
-      console.log(errorThrown)
+        $('#add-topics-form').on('submit', function (e) {
+          e.preventDefault()
+          var data2 = $(this).serialize()
+          console.log(data2)
+
+          $.ajax({
+            type: 'PATCH',
+            url: 'https://readr-app.herokuapp.com/articles/' + res.article._id,
+            data: data2
+          }).done(function (res) {
+          // console.log(res)
+            var newId = res.article._id
+            window.location.replace('file:///Users/isabellaong/General%20Assembly/Projects/readr-client/articles/article.html?id=' + newId)
+          // $('#topics-list').append('<li>' + data2.toUpperCase() + '</li>')
+          })
+        })
+      }).fail(function (jqXHR, textStatus, errorThrown) {
+        console.log(errorThrown)
       })
     })
 
     // add event listener for adding tldr
-
 
   // add event listener for editing topics
   })
