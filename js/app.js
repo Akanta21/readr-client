@@ -77,7 +77,6 @@ $(function () {
     var formData = $(this).serialize()
     console.log(formData)
     signup(formData)
-    $('#sign-in, #sign-up').hide()
   })
 
   // Signing in users
@@ -86,11 +85,11 @@ $(function () {
     event.preventDefault()
     var formData = $(this).serialize()
     signin(formData)
-    $('#sign-in, #sign-up').hide()
   })
 
   console.log(currentUser)
-  if (currentUser !== undefined) $('.nav > li').hide()
+  if (currentUser !== undefined) $('#sign-in, #sign-up').remove()
+  if (currentUser === undefined) $('#logout, #add-article').remove()
   $('#hello-user a').html('Hello, ' + currentUser)
   $('#user-name').html('Welcome ' + window.localStorage.email)
   $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
