@@ -12,12 +12,8 @@ $(document).ready(function () {
   }
 
   var serverURL = 'https://readr-app.herokuapp.com/'
-<<<<<<< HEAD
-
-  var id = '578e07585d16d1384ce6c2d1'
-=======
+  var currentUser = null || window.localStorage.id
   var id = getParameterByName('id')
->>>>>>> create-article
 
   $.ajax({
     type: 'GET',
@@ -51,6 +47,16 @@ $(document).ready(function () {
           console.log(liked)
           // data.article.liked
         })
+        if (currentUser !== null) {
+          $.ajax({
+            type: 'PATCH',
+            url: serverURL + 'users/' + currentUser,
+            data: {articlesShared: id}
+          })
+          .done(function (data) {
+            console.log(data)
+          })
+        }
       })
   })
 
