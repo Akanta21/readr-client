@@ -4,7 +4,7 @@
 		var $element,
 			defaults = {
 				animated: true,
-				delay: 1000,
+				delay: 1500,
 				ieSupport: true,
 				bindResize: true,
 				html5: false,

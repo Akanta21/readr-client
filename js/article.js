@@ -17,43 +17,6 @@ $(document).ready(
     var currentUser = null || window.localStorage.id
     var id = getParameterByName('id')
 
-<<<<<<< HEAD
-    var serverURL = 'https://readr-app.herokuapp.com/'
-    // var id = '578e07585d16d1384ce6c2d1'
-    var id = getParameterByName('id')
-
-    $.ajax({
-      type: 'GET',
-      url: serverURL + 'articles/' + id,
-      dataType: 'json'
-    }).done(function (data) {
-      console.log(data)
-      $('#title').append(data.article.title.toUpperCase())
-      $('#article-body').append(data.article.html)
-      $('#source').append('<a href="' + data.article.url + '">SOURCE</a>')
-      $('#tldr').append('<li>' + data.article.tldr[0].summary + '</li>')
-      data.article.topics.forEach(function (topic) {
-        $('#topics').append('<li>' + topic.topic.toUpperCase() + '</li>')
-      })
-    })
-  // Add likes functionality
-  $('#btn-likes').click(function () {
-    $.get(serverURL + 'articles/' + id)
-      .done(function (data) {
-        var liked = data.article.liked
-        liked++
-        // console.log(liked)
-        $.ajax({
-          type: 'PATCH',
-          crossDomain: true,
-          url: serverURL + 'articles/' + id,
-          dataType: 'json',
-          data: {liked: liked}
-        })
-        .done(function (data) {
-          console.log(liked)
-          // data.article.liked
-=======
     $('#scroll').scrollIndicator({
 
       // Support for IE8 and IE9 browsers.
@@ -82,7 +45,6 @@ $(document).ready(
         $('#tldr').append('<li>' + data.article.tldr[0].summary + '</li>')
         data.article.topics.forEach(function (topic) {
           $('#topics').append('<li>' + topic.topic.toUpperCase() + '</li>')
->>>>>>> 9f868e18fd8ba08efb4af812921d9dfef1b1d296
         })
       })
     // Add likes functionality
@@ -211,7 +173,6 @@ $(document).ready(
 
       // add event listener for adding tldr
 
-<<<<<<< HEAD
   // add event listener for editing topics
 
   $('body').scrollIndicator({
@@ -226,8 +187,7 @@ $(document).ready(
     // Use of progress element. Disable for CSS3 animation.
     html5: true
   })
-=======
+
     // add event listener for editing topics
     }
->>>>>>> 9f868e18fd8ba08efb4af812921d9dfef1b1d296
   })
