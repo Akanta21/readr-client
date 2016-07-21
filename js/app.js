@@ -16,7 +16,7 @@ function signup (formData) {
       console.log(response.user.auth_token)
       // success save the repsonse
       window.localStorage.id = response.user._id
-      window.localStorage.email = $('#inputEmail2').val()
+      window.localStorage.email = $('#inputEmail1').val()
       window.localStorage.auth_token = response.user.auth_token
       // then redirect
       window.location.href = './'
