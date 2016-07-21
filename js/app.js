@@ -2,7 +2,7 @@
 console.log('App.js is loaded')
 /* global $ */
 var serverURL = 'https://readr-app.herokuapp.com/'
-var currentUser = null || window.localStorage.email
+var currentUser = window.localStorage.email
 
 function signup (formData) {
   console.log(formData)
@@ -89,7 +89,8 @@ $(function () {
     $('#sign-in, #sign-up').hide()
   })
 
-  if (currentUser === null) $('#sign-in, #sign-up, #add-article').hide()
+  console.log(currentUser)
+  if (currentUser !== undefined) $('.nav > li').hide()
   $('#hello-user a').html('Hello, ' + currentUser)
   $('#user-name').html('Welcome ' + window.localStorage.email)
   $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
