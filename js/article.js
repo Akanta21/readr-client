@@ -73,7 +73,7 @@ $(document).ready(
               $.ajax({
                 type: 'PATCH',
                 url: serverURL + 'users/' + currentUser,
-                data: {articlesLiked: id}
+                data: {articlesLiked: data.article.id}
               })
               .done(function (data) {
                 console.log(data)
@@ -108,7 +108,7 @@ $(document).ready(
                 $.ajax({
                   type: 'PATCH',
                   url: serverURL + 'users/' + currentUser,
-                  data: {articlesShared: id}
+                  data: {articlesShared: data.article.id}
                 })
                 .done(function (data) {
                   console.log(data)
