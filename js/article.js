@@ -42,7 +42,9 @@ $(document).ready(
         $('#title').append(data.article.title.toUpperCase())
         $('#article-body').append(data.article.html)
         $('#source').append('<a href="' + data.article.url + '">SOURCE</a>')
-        $('#tldr').append('<li>' + data.article.tldr[0].summary + '</li>')
+        data.article.tldr.forEach(function (tldr) {
+          $('#tldr').append('<li>' + tldr.summary + '</li>')
+        })
         data.article.topics.forEach(function (topic) {
           $('#topics').append('<li>' + topic.topic.toUpperCase() + '</li>')
         })
@@ -136,14 +138,6 @@ $(document).ready(
           dataType: 'json',
           data: data
         }).done(function (res) {
-        // $('#title').empty().append(res.article.title.toUpperCase())
-        // $('#article-body').empty().append(res.article.html)
-        // $('#source').empty().append('<a href="' + res.article.url + '">SOURCE</a>')
-        // $('#tldr').empty().append('<li>' + res.article.tldr[0].summary + '</li>')
-        // $('#topics').empty()
-        // res.article.topics.forEach(function (topic) {
-        //   $('#topics').append('<li>' + topic.topic + '</li>')
-        // })
           $('#create-article-submit').hide()
           $('#add-topics-form').show()
           res.article.topics.forEach(function (topic) {
@@ -172,22 +166,22 @@ $(document).ready(
       })
 
       // add event listener for adding tldr
+      $('#add-tldr-form').on('submit', function (e) {
+        e.preventDefault()
+        var data = $(this).serialize()
+        console.log(data)
 
-  // add event listener for editing topics
-
-  $('body').scrollIndicator({
-    // Support for IE8 and IE9 browsers.
-    ieSupport: true,
-    // Re-calculate values on window.resize event.
-    bindResize: true,
-    // React to changes in DOM model.
-    bindDOMSubtreeModified: true,
-    // Enable smooth animation
-    animated: true,
-    // Use of progress element. Disable for CSS3 animation.
-    html5: true
-  })
-
-    // add event listener for editing topics
+        $.ajax({
+          type: 'PATCH',
+          url: serverURL + 'articles/' + id,
+          dataType: 'json',
+          data: data
+        }).done(function (res) {
+          var newId = res.article._id
+          window.location.replace('https://flight846.github.io/readr-client/articles/article.html?id=' + newId)
+        })
+      })
+      // add event listener for editing topics
     }
+    // else redirect back to home page
   })

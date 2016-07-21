@@ -4,7 +4,6 @@ function getRandomInt (min, max) {
 }
 
 function createHomeGrid () {
-
   $.ajax({
     url: 'https://readr-app.herokuapp.com/articles',
     success: function (data) {
@@ -24,8 +23,8 @@ function getAllArticleTitles () {
     url: 'https://readr-app.herokuapp.com/articles',
     success: function (data) {
       for (var i = 0; i < data.articles.length; i++) {
-          var currentBox = $('box#box' + i)
-          currentBox.append(data.articles[i].title)
+        var currentBox = $('box#box' + i)
+        currentBox.append(data.articles[i].title)
       }
     }
   })

@@ -58,6 +58,7 @@ $(function () {
     event.preventDefault()
 
     // window.locationStorage.removeItem('id')
+    window.localStorage.removeItem('id')
     window.localStorage.removeItem('email')
     window.localStorage.removeItem('auth_token')
     window.location.href = '../index.html'
