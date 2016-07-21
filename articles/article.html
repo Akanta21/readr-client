@@ -41,7 +41,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
-          <li><a href="#" id="#logout">Sign out</a></li>
+          <li id="#logout"><a href="#">Sign out</a></li>
         </ul>
       </div>
     </div>
@@ -76,11 +76,13 @@
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div class="row" style="text-align: center; margin: 30px 0 70px 0;">
-        <div class="col-md-6" id="liked-count">
+        <div class="col-md-6">
           <button type="button" class="btn btn-circle btn-lg" id="btn-likes"><i class="glyphicon glyphicon-heart-empty" style="text-align: center;"></i></button>
+          <div id="liked-count"></div>
         </div>
-        <div class="col-md-6" id="shared-count">
+        <div class="col-md-6">
           <button type="button" class="btn btn-circle btn-lg"id="btn-share"><i class="glyphicon glyphicon-send" style="text-align: center;"></i></button>
+          <div id="shared-count"></div>
         </div>
       </div>
       <h3>tl;dr</h3>
