@@ -90,4 +90,6 @@ $(function () {
   })
 
   $('#hello-user a').html('Hello, ' + currentUser)
+  $('#user-name').html('Welcome ' + window.localStorage.email)
+  $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
 })
