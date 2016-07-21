@@ -20,9 +20,11 @@
   <div id="wrap">
   <div class="container-fluid" style="margin-top: 40px;">
     <div class="col-lg-1 col-md-1"></div>
-    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-      <div id="title" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
-      <div id="article-body"></div>
+    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 results-parent">
+      <div class="results">
+        <div id="title" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body"></div>
+      </div>
       <div id="source"></div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -55,8 +57,9 @@ var query = $.urlParam("search")
       console.log(data)
       for (var i=0; i<data.articles.length; i++){
         $('#title').append(data.articles[i].title.toUpperCase())
-        $('#article-body').append(data.articles[i].html)
-        $('#source').append('<a href="' + data.articles[i].url + '">SOURCE</a>')
+        // $('#article-body').append(data.articles[i].tldr[0].summary)
+        // $('#source').append('<a href="' + data.articles[i].url + '">SOURCE</a>')
+        $('#title').wrap('<a href="https://flight846.github.io/readr-client/articles/article.html?id=' + data.articles[i]._id + '"></a>')
         data.articles[i].topics.forEach(function (topic) {
           if (topic.topic) $('#topics').append('<li>' + topic.topic.toUpperCase() + '</li>')
         })
