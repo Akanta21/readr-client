@@ -1,12 +1,26 @@
 var search = document.getElementsByClassName('query-input')[0]
+var searchTerm = $('input.query-input')
 
-search.addEventListener('keyup', function (e) {
+search.addEventListener('keypress', function (e) {
   var query = e.target.value
-  var results = document.getElementById('results')
-  results.classList = query === "" ? "" : "active"
-  searchLibrary(query)
+  var key = e.which || e.keyCode
+  if (key === 13) {
+    e.preventDefault()
+
+    
+    window.location.href = './search.html?search=' + query
+  }
+
+
+  // var results = document.getElementById('results')
+  // results.classList = query === "" ? "" : "active"
+
+// searchLibrary(query)
 })
-search.addEventListener('focus', function(e) {
+
+//
+//
+search.addEventListener('focus', function (e) {
   var main = document.getElementsByClassName('main')[0]
   main.classList = 'main'
 })
