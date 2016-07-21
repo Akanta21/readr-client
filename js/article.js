@@ -16,6 +16,7 @@ $(document).ready(
     var serverURL = 'https://readr-app.herokuapp.com/'
     var currentUser = null || window.localStorage.id
     var id = getParameterByName('id')
+    var liked = $('#liked-count').html(liked)
 
     $('#scroll').scrollIndicator({
 
@@ -50,39 +51,9 @@ $(document).ready(
         })
       })
     // Add likes functionality
-      $('#btn-likes').click(function () {
-        $.get(serverURL + 'articles/' + id)
-        .done(function (data) {
-          var liked = data.article.liked
-          liked++
-          $('#liked-count').html(liked)
-          // console.log(liked)
-          $.ajax({
-            type: 'PATCH',
-            crossDomain: true,
-            url: serverURL + 'articles/' + id,
-            dataType: 'json',
-            data: {liked: liked}
-          })
-          .done(function (data) {
-            console.log(liked)
-          })
-          if (currentUser !== null) {
-            $.ajax({
-              type: 'PATCH',
-              url: serverURL + 'users/' + currentUser,
-              data: {articlesShared: id}
-            })
-            .done(function (data) {
-              console.log(data)
-            })
-          }
-        })
-      })
-
-      // Add likes functionality
-      $('#btn-likes').click(function () {
-        $.get(serverURL + 'articles/' + id)
+      if (currentUser != null) {
+        $('#btn-likes').click(function () {
+          $.get(serverURL + 'articles/' + id)
           .done(function (data) {
             var liked = data.article.liked
             liked++
@@ -92,39 +63,60 @@ $(document).ready(
               crossDomain: true,
               url: serverURL + 'articles/' + id,
               dataType: 'json',
-              data: {
-                liked: liked
-              }
+              data: {liked: liked}
             })
-              .done(function (data) {
-                console.log(liked)
-              // data.article.liked
+            .done(function (data) {
+              console.log(liked)
+              $('#liked-count').html(liked)
+            })
+            if (currentUser !== null) {
+              $.ajax({
+                type: 'PATCH',
+                url: serverURL + 'users/' + currentUser,
+                data: {articlesLiked: id}
               })
+              .done(function (data) {
+                console.log(data)
+              })
+            }
           })
-      })
+        })
+      }
 
       // Add share count functionality
-      $('#btn-share').click(function () {
-        $.get(serverURL + 'articles/' + id)
-          .done(function (data) {
-            var share = data.article.shared
-            share++
-            // console.log(liked)
-            $.ajax({
-              type: 'PATCH',
-              crossDomain: true,
-              url: serverURL + 'articles/' + id,
-              dataType: 'json',
-              data: {
-                shared: share
+      if (currentUser != null) {
+        $('#btn-share').click(function () {
+          $.get(serverURL + 'articles/' + id)
+            .done(function (data) {
+              var share = data.article.shared
+              share++
+              // console.log(liked)
+              $.ajax({
+                type: 'PATCH',
+                crossDomain: true,
+                url: serverURL + 'articles/' + id,
+                dataType: 'json',
+                data: {
+                  shared: share
+                }
+              })
+              .done(function (data) {
+                $('#shared-count').html(share)
+                console.log(share)
+              })
+              if (currentUser !== null) {
+                $.ajax({
+                  type: 'PATCH',
+                  url: serverURL + 'users/' + currentUser,
+                  data: {articlesShared: id}
+                })
+                .done(function (data) {
+                  console.log(data)
+                })
               }
             })
-              .done(function (data) {
-                console.log(share)
-              // data.article.liked
-              })
-          })
-      })
+        })
+      }
 
       // get form data and post to articles api
       $('#create-article-form').on('submit', function (e) {
