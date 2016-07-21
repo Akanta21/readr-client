@@ -13,10 +13,11 @@ $(document).ready(
       return decodeURIComponent(results[2].replace(/\+/g, ' '))
     }
 
-  var serverURL = 'https://readr-app.herokuapp.com/'
-  var currentUser = null || window.localStorage.id
-  var id = getParameterByName('id')
+    var serverURL = 'https://readr-app.herokuapp.com/'
+    var currentUser = null || window.localStorage.id
+    var id = getParameterByName('id')
 
+<<<<<<< HEAD
     var serverURL = 'https://readr-app.herokuapp.com/'
     // var id = '578e07585d16d1384ce6c2d1'
     var id = getParameterByName('id')
@@ -52,23 +53,41 @@ $(document).ready(
         .done(function (data) {
           console.log(liked)
           // data.article.liked
-        })
-        if (currentUser !== null) {
-          $.ajax({
-            type: 'PATCH',
-            url: serverURL + 'users/' + currentUser,
-            data: {articlesShared: id}
-          })
-          .done(function (data) {
-            console.log(data)
-          })
-        }
-      })
+=======
+    $('#scroll').scrollIndicator({
+
+      // Support for IE8 and IE9 browsers.
+      ieSupport: true,
+      // Re-calculate values on window.resize event.
+      bindResize: true,
+      // React to changes in DOM model.
+      bindDOMSubtreeModified: false,
+      // Enable smooth animation
+      animated: true,
+      // Use of progress element. Disable for CSS3 animation.
+      html5: false
     })
 
+    // if (id) then run this
+    if (id) {
+      $.ajax({
+        type: 'GET',
+        url: serverURL + 'articles/' + id,
+        dataType: 'json'
+      }).done(function (data) {
+        console.log(data)
+        $('#title').append(data.article.title.toUpperCase())
+        $('#article-body').append(data.article.html)
+        $('#source').append('<a href="' + data.article.url + '">SOURCE</a>')
+        $('#tldr').append('<li>' + data.article.tldr[0].summary + '</li>')
+        data.article.topics.forEach(function (topic) {
+          $('#topics').append('<li>' + topic.topic.toUpperCase() + '</li>')
+>>>>>>> 9f868e18fd8ba08efb4af812921d9dfef1b1d296
+        })
+      })
     // Add likes functionality
-    $('#btn-likes').click(function () {
-      $.get(serverURL + 'articles/' + id)
+      $('#btn-likes').click(function () {
+        $.get(serverURL + 'articles/' + id)
         .done(function (data) {
           var liked = data.article.liked
           liked++
@@ -78,89 +97,121 @@ $(document).ready(
             crossDomain: true,
             url: serverURL + 'articles/' + id,
             dataType: 'json',
-            data: {
-              liked: liked
-            }
+            data: {liked: liked}
           })
-            .done(function (data) {
-              console.log(liked)
+          .done(function (data) {
+            console.log(liked)
             // data.article.liked
-            })
-        })
-    })
-
-    // Add share count functionality
-    $('#btn-share').click(function () {
-      $.get(serverURL + 'articles/' + id)
-        .done(function (data) {
-          var share = data.article.shared
-          share++
-          // console.log(liked)
-          $.ajax({
-            type: 'PATCH',
-            crossDomain: true,
-            url: serverURL + 'articles/' + id,
-            dataType: 'json',
-            data: {
-              shared: share
-            }
           })
-            .done(function (data) {
-              console.log(share)
-            // data.article.liked
+          if (currentUser !== null) {
+            $.ajax({
+              type: 'PATCH',
+              url: serverURL + 'users/' + currentUser,
+              data: {articlesShared: id}
             })
+            .done(function (data) {
+              console.log(data)
+            })
+          }
         })
-    })
-
-    // get form data and post to articles api
-    $('#create-article-form').on('submit', function (e) {
-      e.preventDefault()
-      var data = $(this).serialize()
-      console.log(data)
-
-
-      $.ajax({
-        type: 'POST',
-        url: 'https://readr-app.herokuapp.com/articles',
-        data: data
-      }).done(function (res) {
-      // $('#title').empty().append(res.article.title.toUpperCase())
-      // $('#article-body').empty().append(res.article.html)
-      // $('#source').empty().append('<a href="' + res.article.url + '">SOURCE</a>')
-      // $('#tldr').empty().append('<li>' + res.article.tldr[0].summary + '</li>')
-      // $('#topics').empty()
-      // res.article.topics.forEach(function (topic) {
-      //   $('#topics').append('<li>' + topic.topic + '</li>')
-      // })
-      $('#create-article-submit').hide()
-      $('#add-topics-form').show()
-      res.article.topics.forEach(function (topic) {
-        $('#topics-list').append('<li>' + topic.topic.toUpperCase() + '</li>')
       })
-      $('#add-topics-form').on('submit', function (e) {
+
+      // Add likes functionality
+      $('#btn-likes').click(function () {
+        $.get(serverURL + 'articles/' + id)
+          .done(function (data) {
+            var liked = data.article.liked
+            liked++
+            // console.log(liked)
+            $.ajax({
+              type: 'PATCH',
+              crossDomain: true,
+              url: serverURL + 'articles/' + id,
+              dataType: 'json',
+              data: {
+                liked: liked
+              }
+            })
+              .done(function (data) {
+                console.log(liked)
+              // data.article.liked
+              })
+          })
+      })
+
+      // Add share count functionality
+      $('#btn-share').click(function () {
+        $.get(serverURL + 'articles/' + id)
+          .done(function (data) {
+            var share = data.article.shared
+            share++
+            // console.log(liked)
+            $.ajax({
+              type: 'PATCH',
+              crossDomain: true,
+              url: serverURL + 'articles/' + id,
+              dataType: 'json',
+              data: {
+                shared: share
+              }
+            })
+              .done(function (data) {
+                console.log(share)
+              // data.article.liked
+              })
+          })
+      })
+
+      // get form data and post to articles api
+      $('#create-article-form').on('submit', function (e) {
         e.preventDefault()
-        var data2 = $(this).serialize()
-        console.log(data2)
+        var data = $(this).serialize()
+        console.log(data)
 
         $.ajax({
-          type: 'PATCH',
-          url: 'https://readr-app.herokuapp.com/articles/' + res.article._id,
-          data: data2
+          type: 'POST',
+          url: 'https://readr-app.herokuapp.com/articles',
+          dataType: 'json',
+          data: data
         }).done(function (res) {
-          // console.log(res)
-          var newId = res.article._id
-          window.location.replace('file:///Users/isabellaong/General%20Assembly/Projects/readr-client/articles/article.html?id=' + newId)
-          // $('#topics-list').append('<li>' + data2.toUpperCase() + '</li>')
+        // $('#title').empty().append(res.article.title.toUpperCase())
+        // $('#article-body').empty().append(res.article.html)
+        // $('#source').empty().append('<a href="' + res.article.url + '">SOURCE</a>')
+        // $('#tldr').empty().append('<li>' + res.article.tldr[0].summary + '</li>')
+        // $('#topics').empty()
+        // res.article.topics.forEach(function (topic) {
+        //   $('#topics').append('<li>' + topic.topic + '</li>')
+        // })
+          $('#create-article-submit').hide()
+          $('#add-topics-form').show()
+          res.article.topics.forEach(function (topic) {
+            $('#topics-list').append('<li>' + topic.topic.toUpperCase() + '</li>')
+          })
+          $('#add-topics-form').on('submit', function (e) {
+            e.preventDefault()
+            var data2 = $(this).serialize()
+            console.log(data2)
+
+            $.ajax({
+              type: 'PATCH',
+              url: 'https://readr-app.herokuapp.com/articles/' + res.article._id,
+              dataType: 'json',
+              data: data2
+            }).done(function (res) {
+            // console.log(res)
+              var newId = res.article._id
+              window.location.replace('https://flight846.github.io/readr-client/articles/article.html?id=' + newId)
+            // $('#topics-list').append('<li>' + data2.toUpperCase() + '</li>')
+            })
+          })
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+          console.log(errorThrown)
         })
       })
-    }).fail(function (jqXHR, textStatus, errorThrown){
-      console.log(errorThrown)
-      })
-    })
 
-    // add event listener for adding tldr
+      // add event listener for adding tldr
 
-
+<<<<<<< HEAD
   // add event listener for editing topics
 
   $('body').scrollIndicator({
@@ -175,4 +226,8 @@ $(document).ready(
     // Use of progress element. Disable for CSS3 animation.
     html5: true
   })
+=======
+    // add event listener for editing topics
+    }
+>>>>>>> 9f868e18fd8ba08efb4af812921d9dfef1b1d296
   })
