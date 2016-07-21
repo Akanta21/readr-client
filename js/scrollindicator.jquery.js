@@ -88,7 +88,7 @@
 
 				value = top / (plugin.docheight - plugin.winheingt);
 
-				if (value > 1) {
+				if (value > 2) {
 					value = 1;
 				}
 
