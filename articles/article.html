@@ -198,6 +198,86 @@
 </div>
 </div>
 
+<!-- Start of signup modal -->
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Sign up</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="post" action="#" id="signup-form">
+                    <div class="form-group">
+                        <label for="inputName3" class="col-sm-2 control-label">Username</label>
+                        <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="inputName1" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control" id="inputEmail1" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control" id="inputPassword1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" name="commit" class="btn btn-primary btn-block">Sign up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- Start of signin modal -->
+<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign in</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" method="post" action="#" id="signin-form">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="inputEmail2" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox"> Remember me
+                    </label>
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" name="commit" class="btn btn-primary btn-block">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/bar.js"></script>
