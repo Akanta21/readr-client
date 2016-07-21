@@ -142,7 +142,7 @@ function getUsersHomePage () {
 // jQuery time!
 $(function () {
   // to put these three functions in an if-else loop. ask yazid how i can check the window for user credentials
-  getArticlesByTopic() // this works only if the URL contains a topic query (e.g. http://localhost:8080/topics/topics-all.html?topic=nofx)
-  // getAllArticles ()
+  // getArticlesByTopic() // this works only if the URL contains a topic query (e.g. http://localhost:8080/topics/topics-all.html?topic=nofx)
+  getAllArticles ()
   // getUsersHomePage()
 })
