@@ -68,7 +68,7 @@ $(function () {
     // window.locationStorage.removeItem('id')
     window.localStorage.removeItem('email')
     window.localStorage.removeItem('auth_token')
-    window.location.href = './article.html'
+    window.location.href = './articles/article.html'
   })
 
   // listen for the form login
