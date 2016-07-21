@@ -9,6 +9,7 @@
   <title>Readr | Aggregate, Curate, Read </title>
   <!-- Latest compiled and minified CSS -->
   <link href="https://fonts.googleapis.com/css?family=Cousine:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/bootstrap-theme.css">
   <link rel="stylesheet" type="text/css" href="../css/ionicons.css">
@@ -16,7 +17,6 @@
   <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="../css/component.css" />
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  <link rel="stylesheet" href="./css/style.css">
   <!-- favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="./fonts/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="../fonts/favicon/favicon-32x32.png" sizes="32x32">
@@ -29,37 +29,37 @@
 </head>
 <body class="demo-1">
     <!--navbar-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../index.html"><img src="../img/READR_black.png"></a>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><img src="../img/READR_black.png"></a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="modal" data-target="#signup-modal"><strong>Sign up </strong>&nbsp;&nbsp;/ </a></li>
-            <li><a href="#" data-toggle="modal" data-target="#signin-modal">Sign in</a></li>
-          </ul>
-      </div>
-      <div id='search' class="main inactive">
-       <section class="search">
-         <div class="search-box">
-           <div class="cancel"></div>
-             <form class="search-form">
-               <div class="query-box">
-                 <input class="query-input" type="text" autocomplete="off" name="search" placeholder="READR ask me anything!">
-               </div>
-           </form>
-         </div>
-       </section>
-    </div>
-    </div>
-    </nav>
+      <main class="container">
+        <div id='search' class="main inactive">
+         <section class="search">
+           <!-- <div class="search-box"> -->
+             <div class="cancel"></div>
+               <form class="search-form">
+                 <div class="query-box">
+                   <input class="query-input" type="text" autocomplete="off" name="search" placeholder="Search for anything">
+                 </div>
+               </form>
+               <ul class="nav navbar-nav navbar-right">
+                 <li id="add-article" style="position: absolute; right: 20px"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
+                 <li style="position: absolute; right: 140px"><a href="#" id="#logout">Sign out</a></li>
+               </ul>
+             <!-- </div> -->
+         </section>
+       </div>
+    </main>
+  </div>
+</nav>
     <!--End of navbar-->
     <div id="wrap">
       <!-- Start of signup modal -->
@@ -141,12 +141,16 @@
           </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-    <div class="jumbotron homepage" style="margin-top: -40px">
+    <div class="jumbotron homepage">
       <h1>Readr</h1>
       <p>Say goodbye to internet junk.</p>
     </div>
+    <div class="container">
+      <h2> Browse recent articles | <a href="https://flight846.github.io/readr-client/topics/topics-all.html"> Browse by topics</a> </h2>
+      <h4>Here are some articles which we've curated for you.</h4>
+    </div>
+    <div id="homegrid"></div>
 
-    <div class="container-fluid" id="homegrid"></div>
     <footer class="footer">
         <div class="container">
             <!-- <div class="row"> -->
