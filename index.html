@@ -45,21 +45,29 @@
 
       <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./articles/index.html">Top Reads</a></li>
+            <li id="add-article"><a href="#" data-toggle="modal" data-target="#create-article-modal">Create Article</a></li>
             <li><a href="#" data-toggle="modal" data-target="#signup-modal"><strong>Sign up </strong>&nbsp;&nbsp;/ </a></li>
             <li><a href="#" data-toggle="modal" data-target="#signin-modal">Sign in</a></li>
-            <p class="text-center">Made with <span class="ion-ios-heart-outline"> by
-            <a href="https://github.com/davified/">David Tan</a>, <a href="https://github.com/floatonok">Isabella Ong</a>, <a href="https://github.com/byebye321">Stephanie Hendricks</a>, <a href="http://github.com/flight846">Yazid Ismail</a></span></p>
-        <!-- </div> -->
+            <li><a href="#" id="signout" style="display: none;">Sign out</a></li>
           </ul>
       </div>
+      <div id='search' class="main inactive">
+       <section class="search">
+         <div class="search-box">
+           <div class="cancel"></div>
+             <form class="search-form">
+               <div class="query-box">
+                 <input class="query-input" type="text" autocomplete="off" name="search" placeholder="READR ask me anything!">
+               </div>
+             </div>
+           </form>
+         </div>
+       </div>
+     </section>
+   </div>
     </div>
     </nav>
     <!--End of navbar-->
-
-
-      <!--End of navbar-->
-      <div id="wrap">
           <!-- Start of signup modal -->
           <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog">
               <div class="modal-dialog">
@@ -99,195 +107,125 @@
               </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
       <!-- Start of signin modal -->
-      <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
-          <div class="modal-dialog">
+          <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Sign in</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" method="post" action="#" id="signin-form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                <input type="email" name="email" class="form-control" id="inputEmail2" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                  <div class="checkbox">
+                                      <label>
+                                      <input type="checkbox"> Remember me
+                                      </label>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" name="commit" class="btn btn-primary btn-block">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+              <!-- Modal -->
+          </div>
+          <div class="modal fade" id="create-article-modal" role="dialog">
+            <div class="modal-dialog modal-lg">
               <div class="modal-content">
+
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Sign in</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add a New Article</h4>
                 </div>
+
                 <div class="modal-body">
-                    <form class="form-horizontal" method="post" action="#" id="signin-form">
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                            <div class="col-sm-10">
-                            <input type="email" name="email" class="form-control" id="inputEmail2" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                            <div class="col-sm-10">
-                            <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <div class="checkbox">
-                                  <label>
-                                  <input type="checkbox"> Remember me
-                                  </label>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" name="commit" class="btn btn-primary btn-block">Sign in</button>
-                            </div>
-                        </div>
-                    </form>
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-      </div>
-      <div class="container">
-      </div>
-      <div id="push"></div>
-    </div>
-    <svg class="hidden">
-      <defs>
-        <symbol id="icon-arrow" viewBox="0 0 32 32">
-          <title>arrow</title>
-          <path class="path1" d="M7.333 24c-0.133 0-0.4 0-0.533-0.133l-6.667-6.667c0 0-0.133-0.133-0.133-0.267s0-0.133 0-0.267c0 0 0 0 0 0 0-0.133 0-0.133 0-0.267s0.133-0.133 0.133-0.267l6.667-6.667c0.4-0.133 0.8-0.133 1.067 0s0.267 0.667 0 0.933l-5.6 5.6h29.067c0.4 0 0.667 0.267 0.667 0.667s-0.267 0.667-0.667 0.667h-29.067l5.467 5.467c0.267 0.267 0.267 0.667 0 0.933 0 0.267-0.267 0.267-0.4 0.267z"></path>
-        </symbol>
-        <symbol id="icon-drop" viewBox="0 0 32 32">
-          <title>drop</title>
-          <path class="path1" d="M17.333 32c-5.867 0-10.667-4.8-10.667-10.667 0-5.6 9.733-20.4 10.133-21.067 0.267-0.4 0.8-0.4 1.067 0 0.4 0.667 10.133 15.467 10.133 21.067 0 5.867-4.8 10.667-10.667 10.667zM17.333 1.867c-2.133 3.333-9.333 14.933-9.333 19.467 0 5.2 4.133 9.333 9.333 9.333s9.333-4.133 9.333-9.333c0-4.533-7.2-16.133-9.333-19.467z"></path>
-          <path class="path2" d="M13.333 26.533c-0.133 0-0.267 0-0.4-0.133-1.467-1.333-2.267-3.2-2.267-5.067 0-1.6 1.2-4.533 3.467-8.933 0.133-0.4 0.533-0.533 0.933-0.267 0.267 0.133 0.4 0.533 0.267 0.933-2.133 4-3.333 6.933-3.333 8.267 0 1.467 0.667 2.933 1.733 4 0.267 0.267 0.267 0.667 0 0.933 0 0.133-0.267 0.267-0.4 0.267z"></path>
-        </symbol>
-        <!-- icons for grid -->
-        <symbol id="icon-nav" viewbox="0 0 129 129">
-          <title>nav</title>
-          <!-- by Lucy G http://www.flaticon.com/free-icon/down-arrow_118738 -->
-          <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
-        </symbol>
-        <symbol id="icon-cross" viewbox="0 0 129 129">
-          <title>cross</title>
-          <!-- by Lucy G http://www.flaticon.com/free-icon/cancel_118741 -->
-          <path d="M7.6,121.4c0.8,0.8,1.8,1.2,2.9,1.2s2.1-0.4,2.9-1.2l51.1-51.1l51.1,51.1c0.8,0.8,1.8,1.2,2.9,1.2c1,0,2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8L70.3,64.5l51.1-51.1c1.6-1.6,1.6-4.2,0-5.8s-4.2-1.6-5.8,0L64.5,58.7L13.4,7.6C11.8,6,9.2,6,7.6,7.6s-1.6,4.2,0,5.8l51.1,51.1L7.6,115.6C6,117.2,6,119.8,7.6,121.4z"/>
-        </symbol>
-      </defs>
-    </svg>
-    <main>
-      <div class="grid-pages">
-        <div class="grid grid--vertical grid--current grid--style-1" data-path-cover="M 0,0 L 0,0 C 0,0 0,0 0,5 C 0,10 0,10 0,10 L 0,10 Z;M 0,0 L 0,0 C 0,0 5,0 5,5 C 5,10 0,10 0,10 L 0,10 Z;M 0,0 L 10,0 C 10,0 10,0 10,5 C 10,10 10,10 10.1,10 L 0,10 Z" data-path-uncover="M 0,0 L 10,0 C 10,0 10,0 10,5 C 10,10 10,10 10,10 L 0,10 Z;M 0,0 L 10,0 C 10,0 5,0 5,5 C 5,10 10,10 10,10 L 0,10 Z;M 0,0 L 0,0 C 0,0 0,0 0,5 C 0,10 0,10 0,10 L 0,10 Z" data-duration="1000" data-easing-in="easeInExpo" data-easing-out="easeOutExpo">
-          <div class="grid__column">
-            <div class="grid__item grid__item--auto">
-              <header class="codrops-header">
-                <div class="codrops-links">
+                  <form id="create-article-form">
 
-                </div>
-                <h1 class="codrops-header__title">Trending Topics</h1>
-              </header>
-            </div>
-            <div class="grid__item" data-delay="75" data-duration="800">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-          <div class="grid__column">
-            <div class="grid__item" data-delay="100">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-            <div class="grid__item" data-delay="150" data-duration="1200">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>            </div>
-            <div class="grid__item" data-delay="300" data-duration="500">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-          <div class="grid__column">
-            <div class="grid__item grid__item--auto" data-delay="190">
-              <a class="pater" href="">
-                <h2 class="pater__title" aria-label=><img src="img/READR_WHITE.png" alt=""></h2>
-                <p class="pater__desc"> &rarr;</p>
-              </a>
-            </div>
-            <div class="grid__item" data-delay="250">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-    <div class="grid grid--vertical grid--style-1" data-path-cover="M 0,0 L 10,0 L 10,0 C 10,0 10,0 5,0 C 0,0 0,0 0,0 Z;M 0,0 L 10,0 L 10,0 C 10,0 10,5 5,5 C 0,5 0,0 0,0 Z;M 0,0 L 10,0 L 10,10 C 10,10 10,10 5,10 C 0,10 0,10 0,10 Z" data-path-uncover="M 10,0 L 0,0 C 0,0 0,0 0,5 C 0,10 0,10 0,10 L 10,10 Z;M 10,0 L 0,0 C 0,0 5,0 5,5 C 5,10 0,10 0,10 L 10,10 Z;M 10,0 L 10,0 C 10,0 10,0 10,5 C 10,10 10,10 10,10 L 10,10 Z" data-duration="1000" data-easing-in="easeInExpo" data-easing-out="easeOutExpo">
-          <div class="grid__column">
-            <div class="grid__item">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-            <div class="grid__item" data-delay="150">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-          <div class="grid__column">
-            <div class="grid__item" data-delay="200" data-duration="800">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-          <div class="grid__column">
-            <div class="grid__item" data-delay="310" data-duration="550">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-            <div class="grid__item" data-delay="250">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-            <div class="grid__item" data-delay="50" data-duration="950">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid--vertical grid--style-1" data-path-cover="M 0,10 L 10,10 L 10,10 C 10,10 10,10 5,10 C 0,10 0,10 0,10 Z;M 0,10 L 10,10 L 10,10 C 10,10 10,5 5,5 C 0,5 0,10 0,10 Z;M 0,10 L 10,10 L 10,0 C 10,0 10,0 5,0 C 0,0 0,0 0,0 Z" data-path-uncover="M 10,10 L 10,0 C 10,0 10,0 5,0 C 0,0 0,0 0,0 L 0,10 Z;M 10,10 L 10,0 C 10,0 10,5 5,5 C 0,5 0,0 0,0 L 0,10 Z;M 10,10 L 10,10 C 10,10 10,10 5,10 C 0,10 0,10 0,10 L 0,10 Z" data-duration="1000" data-easing-in="easeInExpo" data-easing-out="easeOutExpo">
-          <div class="grid__column">
-            <div class="grid__item">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-            <div class="grid__item" data-delay="50">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-            <div class="grid__item" data-delay="150" data-duration="650">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-          <div class="grid__column">
-            <div class="grid__item" data-delay="210" data-duration="800">
-                <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-            <div class="grid__item" data-delay="150">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid--vertical grid--style-1" data-path-cover="M 10,0 L 10,10 L 10,10 C 10,10 10,10 10,5 C 10,0 10,0 10,0 Z;M 10,0 L 10,10 L 10,10 C 10,10 5,10 5,5 C 5,0 10,0 10,0 Z;M 10,0 L 10,10 L 0,10 C 0,10 0,10 0,5 C 0,0 0,0 0,0 Z" data-path-uncover="M 10,0 L 10,10 C 10,10 10,10 5,10 C 0,10 0,10 0,10 L 0,0 Z;M 10,0 L 10,10 C 10,10 10,5 5,5 C 0,5 0,10 0,10 L 0,0 Z;M 10,0 L 10,0 C 10,0 10,0 5,0 C 0,0 0,0 0,0 L 0,0 Z" data-duration="1100" data-easing-in="easeInExpo" data-easing-out="easeOutExpo">
-          <div class="grid__column">
-            <div class="grid__item">
-              <div class="grid__img"><img src="img/READR_WHITE.png" alt=""></div>
-            </div>
-          </div>
-        </div> -->
-        <nav class="grid-nav">
-          <button class="grid__button grid__button--prev" aria-label="Previous page"><svg class="icon icon--nav-up"><use xlink:href="#icon-nav"></use></svg></button>
-          <button class="grid__button grid__button--next" aria-label="Next page"><svg class="icon icon--nav-down"><use xlink:href="#icon-nav"></use></svg></button>
-        </nav>
-      </div>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <!-- <div class="row"> -->
-                <!-- <div class="col-md-6">
-                    <p>For developers</p>
-                    <p><a href="http://readr-app.herokuapp.com/">Public API</a></p>
-                    <p><a href="https://github.com/davified/readr">Contact Us</a></p>
-                </div>
-                <div class="col-md-6"> -->
+                    <div class="form-group">
+                      <label for="source-url">Source URL</label>
+                      <input type="text" class="form-control" name="url" placeholder="Add Article's URL Here">
+                    </div>
 
-          <!-- </div> -->
-        </div>
-    </footer>
+                    <div class="form-group" id="create-article-submit">
+                      <button type="submit" class="btn btn-transparent">Submit</button>
+                    </div>
+                  </form>
+
+                  <form id="add-topics-form" style="display: none;">
+
+                    <div class="form-group">
+                      <label for="topics">Topics</label>
+                      <input type="text" class="form-control" name= "topics" id="topics" placeholder="Add As Many Relevant Topics Here">
+                    </div>
+                    <div class="row">
+                      <ul id="topics-list" class="col-lg-4 col-md-4"></ul>
+                    </div>
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-transparent">Submit</button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="jumbotron homepage" style="margin-top: -40px">
+            <h1>Readr</h1>
+            <p>Say goodbye to internet junk.</p>
+          </div>
+
+          <div class="container-fluid" id="homegrid">
+          </div>
+          <footer class="footer">
+              <div class="container">
+                <p class="text-center">Made with <span class="ion-ios-heart-outline"> by
+                <a href="https://github.com/davified/">David Tan</a>, <a href="https://github.com/floatonok">Isabella Ong</a>, <a href="https://github.com/byebye321">Stephanie Hendricks</a>, <a href="http://github.com/flight846">Yazid Ismail</a></span></p>
+            <!-- </div> -->
+                  <!-- <div class="row"> -->
+                      <!-- <div class="col-md-6">
+                          <p>For developers</p>
+                          <p><a href="http://readr-app.herokuapp.com/">Public API</a></p>
+                          <p><a href="https://github.com/davified/readr">Contact Us</a></p>
+                      </div>
+                      <div class="col-md-6"> -->
+
+                <!-- </div> -->
+              </div>
+          </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/anime.min.js"></script>
 		<script src="./js/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/home.js"></script>
 		<script src="./js/main.js"></script>
     <script>
     (function() {
       new GridSlideshow(document.querySelector('.grid-pages'));
     })();
     </script>
+    <script src="./js/bar.js"></script>
+    <script src="./js/scrollindicator.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/article.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>

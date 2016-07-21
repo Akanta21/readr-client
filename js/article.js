@@ -170,24 +170,8 @@ $(document).ready(
           console.log(errorThrown)
         })
       })
-
       // add event listener for adding tldr
-
-  // add event listener for editing topics
-
-  $('body').scrollIndicator({
-    // Support for IE8 and IE9 browsers.
-    ieSupport: true,
-    // Re-calculate values on window.resize event.
-    bindResize: true,
-    // React to changes in DOM model.
-    bindDOMSubtreeModified: true,
-    // Enable smooth animation
-    animated: true,
-    // Use of progress element. Disable for CSS3 animation.
-    html5: true
-  })
-
-    // add event listener for editing topics
+      // add event listener for editing topics
     }
+    // else redirect back to home page
   })
