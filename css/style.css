@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    padding-top: 120px;
+    padding-top: 85px;
 }
 
 a:active,
@@ -280,24 +280,30 @@ ul#topics {
   display: block;
   border: none;
   z-index: 500;
-  background: #eeeeee;
-  color: #337ab7; }
+  background: red;
+  color: red;
+  }
 
 progress.scrollindicator,
 div.scrollindicator {
   margin-bottom: 20px;
-  position: fixed; }
+  position: fixed;
+  -moz-animation: neon1 1.5s ease-in-out infinite }
 
 progress.scrollindicator {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none; }
+  appearance: none;
+  -moz-animation: neon1 1.5s ease-in-out infinite  }
   progress.scrollindicator::-webkit-progress-bar {
-    background-color: transparent; }
+  background-color: transparent;
+  -moz-animation: neon1 1.5s ease-in-out infinite  }
   progress.scrollindicator::-webkit-progress-value {
-    background-color: #337ab7; }
+    background-color: #337ab7;
+    -moz-animation: neon1 1.5s ease-in-out infinite  }
   progress.scrollindicator::-moz-progress-bar {
-    background-color: #337ab7; }
+    background-color: #337ab7;
+  -moz-animation: neon1 1.5s ease-in-out infinite  }
 
 .scrollindicator-nohtml5 {
   width: 100%;
@@ -305,16 +311,19 @@ progress.scrollindicator {
   display: block;
   border: none;
   z-index: 500;
-  background: #eeeeee;
-  color: #337ab7; }
+  background: red;
+  color: red;
+-moz-animation: neon1 1.5s ease-in-out infinite  }
   .scrollindicator-nohtml5 span {
     width: 100%;
     height: 100%;
     display: block;
     text-indent: -9999px;
-    background: #337ab7; }
+    background: #337ab7;
+  -moz-animation: neon1 1.5s ease-in-out infinite  }
   .animated .scrollindicator-nohtml5 span {
     -webkit-transition: width 300ms ease;
-    transition: width 300ms ease; }
+    transition: width 300ms ease;
+  -moz-animation: neon1 1.5s ease-in-out infinite  }
 
 /*# sourceMappingURL=style.css.map */

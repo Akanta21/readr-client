@@ -4,11 +4,11 @@
 		var $element,
 			defaults = {
 				animated: true,
-				delay: 25,
+				delay: 1000,
 				ieSupport: true,
 				bindResize: true,
 				html5: false,
-				bindDOMSubtreeModified: false
+				bindDOMSubtreeModified: true
 			},
 			plugin = this,
 			load,

@@ -17,20 +17,6 @@ $(document).ready(
   var currentUser = null || window.localStorage.id
   var id = getParameterByName('id')
 
-    $('#scroll').scrollIndicator({
-
-      // Support for IE8 and IE9 browsers.
-      ieSupport: true,
-      // Re-calculate values on window.resize event.
-      bindResize: true,
-      // React to changes in DOM model.
-      bindDOMSubtreeModified: false,
-      // Enable smooth animation
-      animated: true,
-      // Use of progress element. Disable for CSS3 animation.
-      html5: false
-    })
-
     var serverURL = 'https://readr-app.herokuapp.com/'
     // var id = '578e07585d16d1384ce6c2d1'
     var id = getParameterByName('id')
@@ -176,4 +162,17 @@ $(document).ready(
 
 
   // add event listener for editing topics
+
+  $('body').scrollIndicator({
+    // Support for IE8 and IE9 browsers.
+    ieSupport: true,
+    // Re-calculate values on window.resize event.
+    bindResize: true,
+    // React to changes in DOM model.
+    bindDOMSubtreeModified: true,
+    // Enable smooth animation
+    animated: true,
+    // Use of progress element. Disable for CSS3 animation.
+    html5: true
+  })
   })
