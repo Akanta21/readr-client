@@ -22,8 +22,26 @@
     <div class="col-lg-1 col-md-1"></div>
     <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 results-parent">
       <div class="results">
-        <div id="title" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
-        <div id="article-body"></div>
+        <div id="title0" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body0"></div>
+
+        <div id="title1" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body1"></div>
+
+        <div id="title2" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body2"></div>
+
+        <div id="title3" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body3"></div>
+
+        <div id="title4" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body4"></div>
+
+        <div id="title5" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body5"></div>
+
+        <div id="title6" style="font-family: 'Reem Kufi', sans-serif; font-size: 38px;"></div>
+        <div id="article-body6"></div>
       </div>
       <div id="source"></div>
     </div>
@@ -56,10 +74,10 @@ var query = $.urlParam("search")
     success: function (data) {
       console.log(data)
       for (var i=0; i<data.articles.length; i++){
-        $('#title').append(data.articles[i].title.toUpperCase())
-        // $('#article-body').append(data.articles[i].tldr[0].summary)
+        $('#title' + i).append(data.articles[i].title.toUpperCase())
+        $('#article-body' + i).append(data.articles[i].tldr[0].summary)
         // $('#source').append('<a href="' + data.articles[i].url + '">SOURCE</a>')
-        $('#title').wrap('<a href="https://flight846.github.io/readr-client/articles/article.html?id=' + data.articles[i]._id + '"></a>')
+        $('#title' + i).wrap('<a href="https://flight846.github.io/readr-client/articles/article.html?id=' + data.articles[i]._id + '"></a>')
         data.articles[i].topics.forEach(function (topic) {
           if (topic.topic) $('#topics').append('<li>' + topic.topic.toUpperCase() + '</li>')
         })
