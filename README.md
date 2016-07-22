@@ -1,7 +1,6 @@
 ##Synopsis
 
-This repo contains client-side code for Readr, which is an app that aggregates, curates and serves quality articles.
-Read deeply and drink deeply of knowledge from the power of the internet as Readr filters and delivers quality articles and news for any chosen topic. Say goodbye to information overload and internet junk.
+This repo contains client-side code for Readr, which is an app that aggregates, curates and serves quality articles. Read deeply and drink deeply of knowledge from the power of the internet as Readr filters and delivers quality articles and news for any chosen topic. Say goodbye to information overload and internet junk.
 ----
 
 ##Motivation
